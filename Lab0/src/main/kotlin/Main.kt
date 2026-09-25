@@ -590,10 +590,76 @@ fun task8() {
     println("Product of elements: ${numbers.product()}")
     println("Average: ${numbers.average()}")}
 
-fun task9() {
+fun scalarProduct(v1: Vector, v2: Vector): Double {
+    return v1.x * v2.x +
+           v1.y * v2.y +
+           v1.z * v2.z
+}
 
+fun readDouble(prompt: String): Double {
+    while (true) {
+        print(prompt)
+
+        val input = readlnOrNull()?.trim()
+        val value = input?.toDoubleOrNull()
+
+        if (value != null) {
+            return value
+        }
+
+        println("Try again. Please enter a number.")
+    }
+}
+
+fun task9() {
+    println("\nEnter coordinates of the first vector:")
+    val x1 = readDouble("x1 = ")
+    val y1 = readDouble("y1 = ")
+    val z1 = readDouble("z1 = ")
+
+    println("\nEnter coordinates of the second vector:")
+    val x2 = readDouble("x2 = ")
+    val y2 = readDouble("y2 = ")
+    val z2 = readDouble("z2 = ")
+
+    val vector1 = Vector(x1, y1, z1)
+    val vector2 = Vector(x2, y2, z2)
+
+    println("\nVector 1: ($x1, $y1, $z1)")
+    println("Vector 2: ($x2, $y2, $z2)")
+
+    println("\nLength of vector 1: ${vector1.length()}")
+    println("Length of vector 2: ${vector2.length()}")
+
+    println("\nScalar product using method:")
+    println(vector1.scalarProduct(vector2))
+
+    println("\nScalar product using infix:")
+    println(vector1 scalar vector2)
+
+    println("\nScalar product using operator *:")
+    println(vector1 * vector2)
+
+    println("\nScalar product using external function:")
+    println(scalarProduct(vector1, vector2))
 }
 
 fun task10() {
+    println("\n--- Task 10: Vehicles ---")
 
+    val boat = Boat()
+    val airplane = Airplane()
+    val tank = Tank()
+
+    println("\nBoat:")
+    boat.start()
+    boat.stop()
+
+    println("\nAirplane:")
+    airplane.start()
+    airplane.stop()
+
+    println("\nTank:")
+    tank.start()
+    tank.stop()
 }
