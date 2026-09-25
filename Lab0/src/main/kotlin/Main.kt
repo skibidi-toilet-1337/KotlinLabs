@@ -648,8 +648,6 @@ fun task9() {
 }
 
 fun task10() {
-    println("\n--- Task 10: Vehicles ---")
-
     val boat = Boat()
     val airplane = Airplane()
     val tank = Tank()
