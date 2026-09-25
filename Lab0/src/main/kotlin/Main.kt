@@ -4,22 +4,24 @@ fun main() {
 
     while (true) {
         println()
-        println("----MENU----")
-        println("1.Task 1")
-        println("2.Task 2")
-        println("3.Task 3")
-        println("4.Task 4")
-        println("5.Task 5")
-        println("6.Task 6")
-        println("7.Task 7")
-        println("8.Task 8")
-        println("9.Task 9")
-        println("10.Task 10")
+        println("--------------------MENU--------------------")
+        println("1.First and last digit sum")
+        println("2.Sum, count and average of numbers")
+        println("3.Guess the number")
+        println("4.Prime numbers")
+        println("5.Array elements greater than neighbors")
+        println("6.Array product, min and max")
+        println("7.Quadratic equation solver")
+        println("8.Array operations class")
+        println("9.3D vectors")
+        println("10.Vehicles")
         println("0. Exit")
-        println("------------")
+        println("--------------------------------------------")
         print("Choose a task: ")
 
-        when (readln().toInt()) {
+        val choice = readlnOrNull()?.toIntOrNull()
+
+        when (choice) {
             1 -> task1()
             2 -> task2()
             3 -> task3()
@@ -34,6 +36,7 @@ fun main() {
                 println("Exiting program")
                 return
             }
+            null -> println("Invalid input. Enter a number")
             else -> println("Invalid task number")
         }
     }
